@@ -2,6 +2,11 @@
   max-height: 102px;
   padding: 23px 0;
   display: flex;
+  gap: 16px;
+  .searchbar-logo {
+    display: flex;
+    flex: 1;
+  }
   .searchbar {
     max-width: 768px;
     width: 100%;
@@ -11,6 +16,19 @@
     padding: 0 19px;
     gap: 21px;
     // align-self: flex-end;
+    &:focus-within {
+      background-color: white;
+      path {
+        stroke: #6e6f6f;
+      }
+      g {
+        opacity: 1;
+      }
+    }
+    span {
+      display: flex;
+      align-items: center;
+    }
     input {
       background-color: transparent;
       outline: none;
@@ -19,6 +37,12 @@
       height: 24px;
       font-size: 16px;
       line-height: 19px;
+
+      &:focus-visible,
+      &:focus {
+        background-color: white;
+        color: #6e6f6f;
+      }
     }
   }
 }
