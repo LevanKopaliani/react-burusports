@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "FiraGO";
+  src: local("FiraGO"), url(./assets/fonts/FiraGO-Regular.woff) format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "FiraGO";
+  src: local("FiraGO"), url(./assets/fonts/FiraGO-Medium.woff) format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "FiraGO";
+  src: local("FiraGO"), url(./assets/fonts/FiraGO-Bold.woff) format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "FiraGO";
+  src: local("FiraGO"), url(./assets/fonts/FiraGO-SemiBold.woff) format("woff");
+  font-weight: 600;
+}
+
+body {
+  font-family: "FiraGO";
+  font-weight: 400;
+  margin: 0;
+  // font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 88px;
+}
+
+.container {
+  max-width: 1104px;
+  margin: 0 auto;
+  // padding: 0 88px;
+}

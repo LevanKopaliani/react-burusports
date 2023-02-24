@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "../styles/NavBar.css";
+import "../styles/NavBar.scss";
 import { IconContext } from "react-icons";
 
 const NavBar = () => {
@@ -16,7 +16,12 @@ const NavBar = () => {
   return (
     <IconContext.Provider value={{ color: "#fff" }}>
       <div className="navbar">
-        <div className="navbar-container container">
+        <div className="navbar-container">
+          <div className="language-bar">
+            <span>GEO</span>
+            <span className="lang-divider"></span>
+            <span>ENG</span>
+          </div>
           <div className="nav-logo">
             <span>Logo</span>
           </div>
@@ -26,13 +31,24 @@ const NavBar = () => {
           <ul className={mobileMenu ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <NavLink
-                to="/"
+                to="/Login"
                 className={({ isActive }) =>
                   isActive ? "nav-links activated" : "nav-links"
                 }
                 onClick={closeMobileMenu}
               >
-                Home
+                შესვლა
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/Registration"
+                className={({ isActive }) =>
+                  isActive ? "nav-links activated" : "nav-links"
+                }
+                onClick={closeMobileMenu}
+              >
+                რეგისტრაცია
               </NavLink>
             </li>
             <li className="nav-item">
@@ -43,18 +59,29 @@ const NavBar = () => {
                 }
                 onClick={closeMobileMenu}
               >
-                About
+                გაქირავება
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-                to="/"
+                to="/Service"
                 className={({ isActive }) =>
                   isActive ? "nav-links activated" : "nav-links"
                 }
                 onClick={closeMobileMenu}
               >
-                Contact
+                მომსახურება
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/Contact"
+                className={({ isActive }) =>
+                  isActive ? "nav-links activated" : "nav-links"
+                }
+                onClick={closeMobileMenu}
+              >
+                კონტაქტი
               </NavLink>
             </li>
           </ul>

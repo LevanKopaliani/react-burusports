@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./index.scss";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
+import Header from "./pages/Header";
 
 const Applayout = () => {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
+      <Header />
       <Outlet />
     </>
   );

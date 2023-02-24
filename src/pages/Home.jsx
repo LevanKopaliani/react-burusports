@@ -1,4 +1,4 @@
-import MyInput from "../components/MyInput";
+import "../styles/Home.scss";
 
 const Home = () => {
   return (
@@ -14,7 +14,6 @@ const Home = () => {
       }}
     >
       Home
-      <MyInput place={"test"} />
     </div>
   );
 };
