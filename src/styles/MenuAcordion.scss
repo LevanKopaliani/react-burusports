@@ -3,6 +3,7 @@
   .acordion-item {
     // padding: 0 16px;
     border-bottom: 1px solid rgba($color: #e7e7e7, $alpha: 0.4);
+
     .acordion-item-title {
       padding: 0 16px;
       height: 64px;
@@ -11,6 +12,7 @@
       align-items: center;
       gap: 16px;
       //   border-bottom: 1px solid rgba($color: #e7e7e7, $alpha: 0.4);
+
       .acordion-title {
         font-weight: 600;
         font-size: 15px;
@@ -29,7 +31,9 @@
 }
 .acordion-content {
   color: white;
-  //   margin-top: 32px;
+  //   height: 0px;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
 }
 .acordion-content p {
   color: white;
