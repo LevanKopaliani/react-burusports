@@ -1,0 +1,45 @@
+.menu-acordion {
+  color: white;
+  .acordion-item {
+    // padding: 0 16px;
+    border-bottom: 1px solid rgba($color: #e7e7e7, $alpha: 0.4);
+    .acordion-item-title {
+      padding: 0 16px;
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      //   border-bottom: 1px solid rgba($color: #e7e7e7, $alpha: 0.4);
+      .acordion-title {
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+.colapse-img {
+  //   width: 40px;
+  //   height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.acordion-content {
+  color: white;
+  //   margin-top: 32px;
+}
+.acordion-content p {
+  color: white;
+  line-height: 24px;
+  //   border-top: 1px solid #454b61;
+  padding: 16px 0;
+}
+.acordion-content:first-child {
+  margin-top: 32px;
+}
+.acordion-content:last-child {
+  //   border-bottom: 1px solid #454b61;
+}

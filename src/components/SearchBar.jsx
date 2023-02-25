@@ -1,7 +1,7 @@
 import "../styles/SearchBar.scss";
 import SearchBarLogo from "../assets/img/searchbar-logo.png";
 import SearchIcon from "../assets/img/search-icon.svg";
-import Cart from "./Cart";
+import CartIcon from "./CartIcon";
 
 const SearchBar = () => {
   return (
@@ -39,7 +39,7 @@ const SearchBar = () => {
         </span>
         <input type="text" placeholder="ჩაწერე საძიებო სიტყვა..." />
       </div>
-      <Cart />
+      <CartIcon />
     </div>
   );
 };

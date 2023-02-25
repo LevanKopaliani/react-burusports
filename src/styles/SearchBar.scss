@@ -6,8 +6,12 @@
   .searchbar-logo {
     display: flex;
     flex: 1;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   .searchbar {
+    height: 56px;
     max-width: 768px;
     width: 100%;
     border: 1px solid rgba($color: #6e6f6f, $alpha: 0.4);
@@ -43,6 +47,11 @@
         background-color: white;
         color: #6e6f6f;
       }
+    }
+  }
+  .cart-icon {
+    @media (max-width: 768px) {
+      display: none;
     }
   }
 }
