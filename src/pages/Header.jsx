@@ -1,3 +1,4 @@
+import MainMenu from "../components/MainMenu";
 import NavBar from "../components/NavBar";
 import SearchBar from "../components/SearchBar";
 import "../styles/Header.scss";
@@ -10,6 +11,7 @@ const Header = () => {
           <div className="header-container">
             <NavBar />
             <SearchBar />
+            <MainMenu />
           </div>
         </div>
       </div>

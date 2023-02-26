@@ -51,8 +51,6 @@ const NavBar = () => {
                 <p>test text</p>
                 <p>test text</p>
                 <p>test text</p>
-                <p>test text</p>
-                <p>test text</p>
               </MenuAcordion>
               <MenuAcordion title={"ვარჯიში და ფიტნესი"}>
                 <p>test text</p>

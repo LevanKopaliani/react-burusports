@@ -1,0 +1,114 @@
+.mainmenu {
+  //   display: flex;
+  color: white;
+  background-color: transparent;
+  height: 56px;
+  border-top: 1px solid rgba($color: #e7e7e7, $alpha: 0.4);
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  .menu {
+    width: 100%;
+    height: inherit;
+    list-style: none;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+
+    .menu-item {
+      padding: 0 16px;
+      display: flex;
+      flex: 1;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      line-height: 19px;
+      font-feature-settings: "case" on;
+      &:first-child {
+        flex-basis: 150px;
+      }
+      &:hover {
+        background-color: #f37321;
+        .menu-item-content {
+          color: #0e0f0f;
+          border: 1px solid #e7e7e7;
+          height: 454px;
+          transition: all 0.5s ease;
+        }
+      }
+      .menu-item-content {
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+        top: 56px;
+        width: 100%;
+        background-color: white;
+        height: 0;
+        // height: 454px;
+        max-height: 454px;
+        transition: all 0.5s ease;
+        .menu-category-list {
+          max-width: 296px;
+          // width: 100%;
+          width: 296px;
+          height: 100%;
+          list-style: none;
+          border-right: 1px solid #e7e7e7;
+          background-color: #f7f7f7;
+          .menu-category-item {
+            position: relative;
+            height: 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
+            border-bottom: 1px solid #e7e7e7;
+            img {
+              opacity: 0.5;
+            }
+            &:hover {
+              .category-content {
+                width: 807px;
+                height: 454px;
+                max-width: 807px;
+              }
+              img {
+                opacity: 1;
+              }
+            }
+            .category-content {
+              width: 0;
+              height: 0;
+              overflow: hidden;
+              position: absolute;
+              padding: 0 16px;
+              left: 296px;
+              top: 0;
+
+              // max-width: 807px;
+              // width: 100%;
+              .category-heading {
+                display: flex;
+                align-items: center;
+                height: 48px;
+                border-bottom: 1px solid #e7e7e7;
+              }
+              .category-link-list {
+                list-style: none;
+                .category-link {
+                  height: 40px;
+                  max-width: 162px;
+                  display: flex;
+                  align-items: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
