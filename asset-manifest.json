@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-burusports/static/css/main.dda8bef0.css",
+    "main.js": "/react-burusports/static/js/main.2a96901a.js",
+    "static/media/FiraGO-Medium.woff": "/react-burusports/static/media/FiraGO-Medium.c8bb9b49c2276456161a.woff",
+    "static/media/FiraGO-Bold.woff": "/react-burusports/static/media/FiraGO-Bold.f1925bf170a99f9a3e3b.woff",
+    "static/media/FiraGO-SemiBold.woff": "/react-burusports/static/media/FiraGO-SemiBold.ecbb1bcf64c45426afd3.woff",
+    "static/media/FiraGO-Regular.woff": "/react-burusports/static/media/FiraGO-Regular.797e759c9b533e62290e.woff",
+    "static/media/cart.svg": "/react-burusports/static/media/cart.b24ed443a5cb5be4738221d20ee8d452.svg",
+    "static/media/user.svg": "/react-burusports/static/media/user.9573acf349eb1ad008dbf6e471640699.svg",
+    "index.html": "/react-burusports/index.html",
+    "static/media/search-icon.svg": "/react-burusports/static/media/search-icon.114c63a1ed0d724d55453674cd52c984.svg",
+    "main.dda8bef0.css.map": "/react-burusports/static/css/main.dda8bef0.css.map",
+    "main.2a96901a.js.map": "/react-burusports/static/js/main.2a96901a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dda8bef0.css",
+    "static/js/main.2a96901a.js"
+  ]
+}
