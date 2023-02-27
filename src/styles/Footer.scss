@@ -1,15 +1,15 @@
 .footer {
+  padding: 32px 0 24px 0;
   background-color: #0e0f0f;
   min-height: 344px;
   color: white;
   .footer-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
 
     ul {
       list-style: none;
-      margin-top: 32px;
-      margin-bottom: 33px;
       width: 263px;
       li {
         font-size: 16px;
@@ -26,11 +26,17 @@
     }
   }
   .copyright {
+    margin-top: 33px;
     padding-top: 30px;
     display: flex;
     justify-content: space-between;
     position: relative;
     border-top: 1px solid rgba($color: #ffffff, $alpha: 0.4);
+    @media (max-width: 520px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
     .copyryght-info {
       height: 48px;
       display: flex;

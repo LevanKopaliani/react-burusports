@@ -34,6 +34,7 @@ const Home = () => {
           </SwiperSlide>
         </Swiper>
       </div>
+      <div className="orange-divider"></div>
       <div className="wrapper">
         <div className="container">
           <div className="homepage-container">

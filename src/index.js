@@ -6,6 +6,8 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";
+import Contacts from "./pages/Contacts";
+import Login from "./pages/Login";
 
 const Applayout = () => {
   return (
@@ -26,6 +28,14 @@ const router = createBrowserRouter(
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/Contact",
+          element: <Contacts />,
+        },
+        {
+          path: "/Login",
+          element: <Login />,
         },
       ],
     },

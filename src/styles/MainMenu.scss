@@ -41,6 +41,7 @@
       }
       .menu-item-content {
         position: absolute;
+        z-index: 99;
         overflow: hidden;
         left: 0;
         top: 56px;
@@ -50,6 +51,7 @@
         // height: 454px;
         max-height: 454px;
         transition: all 0.5s ease;
+
         .menu-category-list {
           max-width: 296px;
           // width: 100%;
