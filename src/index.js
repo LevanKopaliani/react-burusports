@@ -5,6 +5,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Header from "./pages/Header";
+import Footer from "./pages/Footer";
 
 const Applayout = () => {
   return (
@@ -12,6 +13,7 @@ const Applayout = () => {
       {/* <NavBar /> */}
       <Header />
       <Outlet />
+      <Footer />
     </>
   );
 };
