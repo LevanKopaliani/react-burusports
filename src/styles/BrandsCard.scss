@@ -1,0 +1,13 @@
+.brandscard {
+  max-width: 264px;
+  // max-height: 264px;
+  @media (max-width: 630px) {
+    max-width: 382px;
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
+}

@@ -1,0 +1,41 @@
+.ProductsCard {
+  max-width: 264px;
+  height: 424px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 24px;
+  background-color: white;
+  @media (max-width: 630px) {
+    max-width: 382px;
+    width: 100%;
+    align-items: center;
+  }
+  .whitespace {
+    display: block;
+    height: 8px;
+    width: 100%;
+  }
+  .product-info {
+    width: 262px;
+    padding: 0 16px;
+    text-align: center;
+    .product-title {
+      height: 56px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #0e0f0f;
+      letter-spacing: 0.01em;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .product-price {
+      margin-top: 8px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}
