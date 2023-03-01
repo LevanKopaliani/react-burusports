@@ -8,6 +8,7 @@ import Header from "./pages/Header";
 import Footer from "./pages/Footer";
 import Contacts from "./pages/Contacts";
 import Login from "./pages/Login";
+import Registration from "./pages/Registration";
 
 const Applayout = () => {
   return (
@@ -36,6 +37,10 @@ const router = createBrowserRouter(
         {
           path: "/Login",
           element: <Login />,
+        },
+        {
+          path: "/Registration",
+          element: <Registration />,
         },
       ],
     },
