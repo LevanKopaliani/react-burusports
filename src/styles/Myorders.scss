@@ -1,0 +1,117 @@
+.myorders {
+  max-width: 776px;
+  min-height: 472px;
+  background-color: #fff;
+  padding: 24px 25px;
+  color: #0e0f0f;
+  &-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    font-feature-settings: "case" on;
+    color: #0e0f0f;
+  }
+  .orders-list {
+    margin-top: 25px;
+    max-width: 726px;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    &-heading {
+      min-height: 70px;
+      padding: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 34px;
+      background-color: #f4f4f4;
+      .order-date {
+        max-width: 150px;
+        &-title {
+          font-size: 12px;
+          line-height: 24px;
+          color: rgba($color: #0e0f0f, $alpha: 0.6);
+        }
+        &-date {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+      .order-price {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        &-title {
+          font-size: 12px;
+          line-height: 24px;
+          color: rgba($color: #0e0f0f, $alpha: 0.6);
+        }
+        &-price {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+      .order-details {
+        .order-number {
+          font-size: 12px;
+          line-height: 24px;
+          color: rgba($color: #0e0f0f, $alpha: 0.6);
+        }
+        .order-invoice {
+          font-size: 14px;
+          line-height: 24px;
+          letter-spacing: 0.01em;
+          color: #f37321;
+        }
+      }
+    }
+    &-content {
+      padding: 0 16px;
+      .order-item {
+        height: 119px;
+        padding: 16px 0;
+        border-bottom: 1px solid #e5e5e5;
+        display: flex;
+        align-items: center;
+        &-name {
+          margin-left: 16px;
+          font-size: 14px;
+          line-height: 24px;
+          letter-spacing: 0.01em;
+          color: #0e0f0f;
+        }
+      }
+    }
+    &-footer {
+      min-height: 65px;
+      width: 100%;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 34px;
+      .delivery-time {
+        &-title {
+          font-size: 12px;
+          line-height: 24px;
+          color: rgba($color: #0e0f0f, $alpha: 0.6);
+        }
+        &-date {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+      .delivery-address {
+        &-title {
+          font-size: 12px;
+          line-height: 24px;
+          color: rgba($color: #0e0f0f, $alpha: 0.6);
+        }
+        &-details {
+          font-size: 14px;
+          line-height: 24px;
+          letter-spacing: 0.01em;
+        }
+      }
+    }
+  }
+}

@@ -9,6 +9,8 @@ import Footer from "./pages/Footer";
 import Contacts from "./pages/Contacts";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
+import Account from "./pages/Account";
+import Myorders from "./components/Myorders";
 
 const Applayout = () => {
   return (
@@ -41,6 +43,16 @@ const router = createBrowserRouter(
         {
           path: "/Registration",
           element: <Registration />,
+        },
+        {
+          path: "/Account",
+          element: <Account />,
+          children: [
+            {
+              path: "/Account/",
+              element: <Myorders />,
+            },
+          ],
         },
       ],
     },

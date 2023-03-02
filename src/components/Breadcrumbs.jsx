@@ -8,6 +8,7 @@ const routes = [
   { path: "/Contact", breadcrumb: "კონტაქტი" },
   { path: "/Login", breadcrumb: "შესვლა" },
   { path: "/Registration", breadcrumb: "რეგისტრაცია" },
+  { path: "/Account", breadcrumb: "ჩემი ანგარიში" },
 ];
 
 const Breadcrumbs = () => {
