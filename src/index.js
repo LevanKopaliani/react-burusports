@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import Account from "./pages/Account";
 import Myorders from "./components/Myorders";
+import ChangeEmail from "./components/ChangeEmail";
 
 const Applayout = () => {
   return (
@@ -51,6 +52,10 @@ const router = createBrowserRouter(
             {
               path: "/Account/",
               element: <Myorders />,
+            },
+            {
+              path: "/Account/Change-email",
+              element: <ChangeEmail />,
             },
           ],
         },

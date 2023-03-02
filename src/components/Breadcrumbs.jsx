@@ -9,6 +9,7 @@ const routes = [
   { path: "/Login", breadcrumb: "შესვლა" },
   { path: "/Registration", breadcrumb: "რეგისტრაცია" },
   { path: "/Account", breadcrumb: "ჩემი ანგარიში" },
+  { path: "/Account/Change-email", breadcrumb: "ელ. ფოსტის შეცვლა" },
 ];
 
 const Breadcrumbs = () => {
