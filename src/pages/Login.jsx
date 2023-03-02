@@ -1,6 +1,7 @@
 import "../styles/Login.scss";
 import fb from "../assets/img/fb.svg";
 import google from "../assets/img/google.svg";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const Login = () => {
   return (
@@ -31,16 +32,17 @@ const Login = () => {
               <p className="registration">
                 <span>არ გაქვთ ანგარიში?</span>დარეგისტრირდი ეხლავე!
               </p>
-              <div className="social-login">
-                <p>ან</p>
-                <button className="fb-login">
-                  <img src={fb} alt="facebook" /> Facebook ავტორიზაცია
-                </button>
-                <button className="google-login">
-                  <img src={google} alt="google" /> Google ავტორიზაცია
-                </button>
-              </div>
             </form>
+            <div className="social-login">
+              <p>ან</p>
+              <button className="fb-login">
+                <img src={fb} alt="facebook" /> Facebook ავტორიზაცია
+              </button>
+              <button className="google-login">
+                <img src={google} alt="google" /> Google ავტორიზაცია
+              </button>
+            </div>
+            <Breadcrumbs />
           </div>
         </div>
       </div>

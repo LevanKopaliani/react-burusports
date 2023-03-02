@@ -20,8 +20,9 @@
       margin-top: 8px;
       display: flex;
       gap: 32px;
-      @media (max-width: 568px) {
+      @media (max-width: 660px) {
         flex-direction: column;
+        // max-width: 368px;
         gap: 16px;
       }
       .input-line {
@@ -29,6 +30,7 @@
         flex-direction: column;
         flex: 1;
         gap: 8px;
+        width: 100%;
         label {
           display: flex;
           justify-content: space-between;
@@ -45,6 +47,9 @@
           width: 100%;
           height: 48px;
           transition: all 0.3s ease;
+          @media (max-width: 660px) {
+            max-width: 100%;
+          }
           &:hover {
             border-color: #afafaf;
             transition: all 0.3s ease;
@@ -164,6 +169,9 @@
         letter-spacing: 0.01em;
         font-feature-settings: "case" on;
         transition: all 0.3s ease;
+        @media (max-width: 660px) {
+          align-self: center;
+        }
         &:hover {
           background: #323232;
         }
