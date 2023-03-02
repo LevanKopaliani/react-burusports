@@ -1,3 +1,8 @@
+.product-link {
+  text-decoration: none;
+  color: #0e0f0f;
+}
+
 .ProductsCard {
   max-width: 264px;
   height: 424px;
@@ -11,6 +16,7 @@
     width: 100%;
     align-items: center;
   }
+
   .whitespace {
     display: block;
     height: 8px;

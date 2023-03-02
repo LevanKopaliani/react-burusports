@@ -12,6 +12,8 @@ import Registration from "./pages/Registration";
 import Account from "./pages/Account";
 import Myorders from "./components/Myorders";
 import ChangeEmail from "./components/ChangeEmail";
+import ChangePassword from "./components/ChangePassword";
+import ProductDetails from "./components/ProductDetails";
 
 const Applayout = () => {
   return (
@@ -46,6 +48,10 @@ const router = createBrowserRouter(
           element: <Registration />,
         },
         {
+          path: "/Product-details",
+          element: <ProductDetails />,
+        },
+        {
           path: "/Account",
           element: <Account />,
           children: [
@@ -56,6 +62,10 @@ const router = createBrowserRouter(
             {
               path: "/Account/Change-email",
               element: <ChangeEmail />,
+            },
+            {
+              path: "/Account/Change-password",
+              element: <ChangePassword />,
             },
           ],
         },

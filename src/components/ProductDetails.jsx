@@ -1,0 +1,100 @@
+import "../styles/ProductDetails.scss";
+import ProductData from "../data/homepageproducts/HomePageProductData";
+import { useLocation } from "react-router-dom";
+
+import ShareFb from "../assets/img/share-fb.svg";
+import ShareTw from "../assets/img/share-tw.svg";
+import ShareTl from "../assets/img/share-tl.svg";
+import Minus from "../assets/img/Minus.svg";
+import Plus from "../assets/img/Plus.svg";
+import { useState } from "react";
+
+const ProductDetails = ({ state }) => {
+  const location = useLocation();
+  const { id } = location.state;
+  const product = ProductData.find((product) => product.id === id);
+
+  // input quantity
+
+  const [quantity, setQuantity] = useState(1);
+
+  const handleQuantityChange = (e) => {
+    e.target.value < 1 ? setQuantity(1) : setQuantity(e.target.value);
+    console.log(quantity);
+  };
+
+  return (
+    <div className="product-details">
+      <div className="wrapper">
+        <div className="container">
+          <div className="product-details-container">
+            <div className="img-block">
+              <img src={product.img} alt="" />
+            </div>
+            <div className="details-block">
+              <h1 className="product-title">{product.title}</h1>
+              <div className="product-price-block">
+                <p className="product-price">{product.price}</p>
+                <p className="guarantee">
+                  გარანტია: 3 თვე შეძენის დამადასტურებელი საწარმოო ხარვეზების
+                  წინააღმდეგ
+                </p>
+                <div className="social-share">
+                  <p>გააზიარეთ</p>
+                  <ul className="social-share-list">
+                    <li className="social-share-links">
+                      <img src={ShareFb} alt="Facebook" />
+                    </li>
+                    <li className="social-share-links">
+                      <img src={ShareTw} alt="Tweeter" />
+                    </li>
+                    <li className="social-share-links">
+                      <img src={ShareTl} alt="Telegram" />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="product-quantity">
+                <p>რაოდენობა:</p>
+                <p className="quantity-input">
+                  <button
+                    onClick={() => setQuantity(quantity - 1)}
+                    disabled={quantity === 1 ? true : false}
+                  >
+                    <img src={Minus} alt="minus" />
+                  </button>
+                  <input
+                    type="number"
+                    className="quantity"
+                    min="1"
+                    value={quantity}
+                    onChange={handleQuantityChange}
+                  />
+                  <button onClick={() => setQuantity(quantity + 1)}>
+                    <img src={Plus} alt="Plus" />
+                  </button>
+                </p>
+                <button className="add-to-cart">კალათაში დამატება</button>
+                <button className="ganvadeba">განვადებით შეძენა</button>
+              </div>
+              <div className="delivery-info">
+                <p>მიწოდების ინფორმაცია</p>
+                <br />
+                <p>სტანდარტული მიწოდების ღირებულება: 6.00₾ </p>
+                <br />
+                <p>
+                  *გამორიცხულია მიწოდება გარე კუნძულებზე - (ჩეთემის კუნძულები,
+                  სტიუარტის კუნძული, კავაუს კუნძული, ვაიჰეკე, კუნძული მატაკანა,
+                  დიდი ბარიერული კუნძული და კუნძული დ'ურვილი), რაც დამატებით
+                  ხარჯებს მოითხოვს.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductDetails;
