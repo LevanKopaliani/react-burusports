@@ -1,4 +1,3 @@
-import Menu, { SubMenu, MenuItem, Divider } from "rc-menu";
 import "rc-menu/assets/index.css";
 import "../styles/MainMenu.scss";
 import ArrowRight from "../assets/img/arrowright.png";

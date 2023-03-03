@@ -1,13 +1,16 @@
 import "../styles/SearchBar.scss";
 import SearchBarLogo from "../assets/img/searchbar-logo.png";
-import SearchIcon from "../assets/img/search-icon.svg";
+// import SearchIcon from "../assets/img/search-icon.svg";
 import CartIcon from "./CartIcon";
+import { Link } from "react-router-dom";
 
 const SearchBar = () => {
   return (
     <div className="searchbar-container">
       <div className="searchbar-logo">
-        <img src={SearchBarLogo} alt="Logo" />
+        <Link to="/">
+          <img src={SearchBarLogo} alt="Logo" />
+        </Link>
       </div>
       <div className="searchbar">
         <span>

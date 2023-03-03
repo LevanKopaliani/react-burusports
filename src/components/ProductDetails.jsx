@@ -15,21 +15,40 @@ const ProductDetails = ({ state }) => {
   const product = ProductData.find((product) => product.id === id);
 
   // input quantity
-
   const [quantity, setQuantity] = useState(1);
 
   const handleQuantityChange = (e) => {
     e.target.value < 1 ? setQuantity(1) : setQuantity(e.target.value);
-    console.log(quantity);
   };
 
+  // Main Image
+  const [mainImage, setMainImage] = useState(product.img);
+
+  const changeImage = (img) => {
+    // setMainImage(img);
+  };
+
+  //
   return (
     <div className="product-details">
       <div className="wrapper">
         <div className="container">
           <div className="product-details-container">
             <div className="img-block">
-              <img src={product.img} alt="" />
+              <div className="mainimg">
+                <img src={mainImage} alt="" />
+              </div>
+              <div className="product-thumbs">
+                {product.thumbnails &&
+                  product.thumbnails.map((img, index) => (
+                    <img
+                      src={img}
+                      alt=""
+                      key={index}
+                      onClick={() => setMainImage(img)}
+                    />
+                  ))}
+              </div>
             </div>
             <div className="details-block">
               <h1 className="product-title">{product.title}</h1>
@@ -90,6 +109,21 @@ const ProductDetails = ({ state }) => {
                 </p>
               </div>
             </div>
+          </div>
+          <div className="product-specifications">
+            <p className="specs-title">სპეციფიკაციები</p>
+            <ul className="specs-list">
+              {product.specs.map((item, index) => (
+                <li className="specs-list-item" key={index}>
+                  <span>{Object.keys(item)}:</span>
+                  <span>{Object.values(item)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="detailed-info">
+            <p className="info-title">დეტალური აღწერა</p>
+            <p className="product-info">{product.info}</p>
           </div>
         </div>
       </div>
