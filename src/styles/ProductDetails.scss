@@ -1,13 +1,18 @@
 .product-details {
-  padding: 32px 0 0 0;
+  padding: 32px 0;
   color: #0e0f0f;
   .product-details-container {
     min-height: 672px;
     display: flex;
     gap: 16px;
+    @media (max-width: 960px) {
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+    }
     .img-block {
       width: 100%;
-
+      padding-bottom: 32px;
       .mainimg {
         max-width: 608px;
         max-height: 608px;
@@ -181,6 +186,7 @@
     }
     .product-info {
       margin-top: 16px;
+      padding-bottom: 16px;
     }
   }
 }

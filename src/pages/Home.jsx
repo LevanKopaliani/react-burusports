@@ -10,7 +10,18 @@ import ProductsCard from "../components/ProductsCard";
 import Banner from "../components/Banner";
 import BannerImg from "../assets/img/banner.png";
 import Brands from "../components/Brands";
+/* ({ CartItems: [...state.CartItems, item] })   */
+// Cart State
+import { create } from "zustand";
+export const useCartStore = create((set) => ({
+  CartItems: [],
+  setCartItem: (item) =>
+    set((state) => ({ CartItems: [...state.CartItems, item] })),
 
+  // removeAllBears: () => set({ bears: 0 }),
+}));
+
+//
 const Home = () => {
   return (
     <div className="home">

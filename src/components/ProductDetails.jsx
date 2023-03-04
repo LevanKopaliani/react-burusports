@@ -8,6 +8,9 @@ import ShareTl from "../assets/img/share-tl.svg";
 import Minus from "../assets/img/Minus.svg";
 import Plus from "../assets/img/Plus.svg";
 import { useState } from "react";
+import SimilarProducts from "./SimilarProducts";
+import Breadcrumbs from "./Breadcrumbs";
+import { useCartStore } from "../pages/Home";
 
 const ProductDetails = ({ state }) => {
   const location = useLocation();
@@ -16,18 +19,15 @@ const ProductDetails = ({ state }) => {
 
   // input quantity
   const [quantity, setQuantity] = useState(1);
-
   const handleQuantityChange = (e) => {
     e.target.value < 1 ? setQuantity(1) : setQuantity(e.target.value);
   };
-
   // Main Image
   const [mainImage, setMainImage] = useState(product.img);
 
-  const changeImage = (img) => {
-    // setMainImage(img);
-  };
-
+  // cart State
+  const AddCartItem = useCartStore((state) => state.setCartItem);
+  // console.log(useCartStore().CartItems);
   //
   return (
     <div className="product-details">
@@ -48,6 +48,21 @@ const ProductDetails = ({ state }) => {
                       onClick={() => setMainImage(img)}
                     />
                   ))}
+              </div>
+              <div className="product-specifications">
+                <p className="specs-title">სპეციფიკაციები</p>
+                <ul className="specs-list">
+                  {product.specs.map((item, index) => (
+                    <li className="specs-list-item" key={index}>
+                      <span>{Object.keys(item)}:</span>
+                      <span>{Object.values(item)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="detailed-info">
+                <p className="info-title">დეტალური აღწერა</p>
+                <p className="product-info">{product.info}</p>
               </div>
             </div>
             <div className="details-block">
@@ -93,7 +108,12 @@ const ProductDetails = ({ state }) => {
                     <img src={Plus} alt="Plus" />
                   </button>
                 </p>
-                <button className="add-to-cart">კალათაში დამატება</button>
+                <button
+                  className="add-to-cart"
+                  onClick={() => AddCartItem({ id: id, quantity: quantity })}
+                >
+                  კალათაში დამატება
+                </button>
                 <button className="ganvadeba">განვადებით შეძენა</button>
               </div>
               <div className="delivery-info">
@@ -110,21 +130,7 @@ const ProductDetails = ({ state }) => {
               </div>
             </div>
           </div>
-          <div className="product-specifications">
-            <p className="specs-title">სპეციფიკაციები</p>
-            <ul className="specs-list">
-              {product.specs.map((item, index) => (
-                <li className="specs-list-item" key={index}>
-                  <span>{Object.keys(item)}:</span>
-                  <span>{Object.values(item)}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="detailed-info">
-            <p className="info-title">დეტალური აღწერა</p>
-            <p className="product-info">{product.info}</p>
-          </div>
+          <SimilarProducts />
         </div>
       </div>
     </div>

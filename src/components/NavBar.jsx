@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../styles/NavBar.scss";
 import { IconContext } from "react-icons";
@@ -29,7 +29,9 @@ const NavBar = () => {
             <span>ENG</span>
           </div>
           <div className="nav-logo">
-            <img src={NavBarLogo} alt="logo" />
+            <Link to="/">
+              <img src={NavBarLogo} alt="logo" />
+            </Link>
           </div>
           <div className="menu-icon" onClick={toogleMenu}>
             {mobileMenu ? <FaTimes /> : <FaBars />}

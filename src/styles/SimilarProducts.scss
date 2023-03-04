@@ -1,0 +1,30 @@
+.similar-products {
+  width: 100%;
+  padding: 16px 0;
+  color: #0e0f0f;
+  .heading {
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    h1 {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.01em;
+      font-feature-settings: "case" on;
+    }
+    span {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+  &-list {
+    display: grid;
+    justify-content: center;
+    column-gap: 16px;
+    row-gap: 30px;
+    grid-template-columns: repeat(auto-fill, 264px);
+  }
+}

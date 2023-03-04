@@ -1,0 +1,55 @@
+.cart {
+  padding-top: 32px;
+  color: #0e0f0f;
+  &-container {
+    padding: 16px 0;
+    &-heading {
+      height: 72px;
+      display: flex;
+      //   justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      .title {
+        flex: 1;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        font-feature-settings: "case" on;
+      }
+      p {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+      }
+      .cnt-shopping {
+        max-width: 200px;
+        height: 40px;
+        background-color: #f37321;
+        font-family: "FiraGO";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        color: #fff;
+        border: none;
+        padding: 0 16px;
+        white-space: nowrap;
+      }
+    }
+    .products-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .product-item {
+        display: flex;
+        align-items: center;
+        img {
+          max-width: 91px;
+        }
+      }
+    }
+  }
+}
