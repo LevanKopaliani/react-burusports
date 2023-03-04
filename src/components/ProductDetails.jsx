@@ -68,7 +68,7 @@ const ProductDetails = ({ state }) => {
             <div className="details-block">
               <h1 className="product-title">{product.title}</h1>
               <div className="product-price-block">
-                <p className="product-price">{product.price}</p>
+                <p className="product-price">{product.price} ₾</p>
                 <p className="guarantee">
                   გარანტია: 3 თვე შეძენის დამადასტურებელი საწარმოო ხარვეზების
                   წინააღმდეგ

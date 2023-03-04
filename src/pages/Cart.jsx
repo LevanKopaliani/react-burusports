@@ -21,13 +21,47 @@ const Cart = () => {
               <button className="cnt-shopping">ყიდვის გაგრძელება</button>
             </div>
             <div className="products-container">
-              {CartItemList.map((product, index) => (
-                <div className="product-item" key={index}>
-                  <img src={product.img} alt="" />
-                  <p>{product.title}</p>
-                  <p>{product.price}</p>
-                </div>
-              ))}
+              <table>
+                <thead>
+                  <tr className="table-heading">
+                    <th>ნივთი</th>
+                    <th>ცალის ფასი</th>
+                    <th>რაოდენობა</th>
+                    <th>შეჯამება</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {CartItemList.map((product, index) => (
+                    <tr className="product-item" key={index}>
+                      <td>
+                        <img src={product.img} alt="" />
+                        <p>{product.title}</p>
+                      </td>
+                      <td>
+                        <p>{product.price} ₾</p>
+                      </td>
+                      <td>
+                        <p>
+                          {
+                            AllCartItem.find((item) => item.id === product.id)
+                              .quantity
+                          }
+                        </p>
+                      </td>
+                      <td>
+                        <p>
+                          {Math.round(
+                            Number(product.price) *
+                              AllCartItem.find((item) => item.id === product.id)
+                                .quantity
+                          )}{" "}
+                          ₾
+                        </p>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
