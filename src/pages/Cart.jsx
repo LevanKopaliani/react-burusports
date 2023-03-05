@@ -5,10 +5,9 @@ import ProductsCard from "../components/ProductsCard";
 
 const Cart = () => {
   const AllCartItem = useCartStore((state) => state.CartItems);
-  console.log(AllCartItem);
-  // const CartItemList = AllCartItem.map((item) =>
-  //   ProductData.find((product) => product.id === item.id)
-  // );
+  const CartTotalQty = useCartStore((state) => state.CartItemsQty());
+  const CartTotalPrice = useCartStore((state) => state.CartTotalPrice());
+  const removeCartItem = useCartStore((state) => state.removeCartItem);
 
   return (
     <div className="cart">
@@ -33,37 +32,45 @@ const Cart = () => {
                 <tbody>
                   {AllCartItem.map((product, index) => (
                     <tr className="product-item" key={index}>
-                      <td>
+                      <td data-title="ნივთი">
                         <img src={product.product.img} alt="" />
-                        <p>{product.product.title}</p>
+                        <h3>
+                          {product.product.title}
+                          <p onClick={() => removeCartItem({ product })}>
+                            remove
+                          </p>
+                        </h3>
                       </td>
-                      <td>
-                        <p>{product.product.price} ₾</p>
-                      </td>
-                      <td>
-                        <p>
-                          {/* {
-                            AllCartItem.find((item) => item.id === product.id)
-                              .quantity
-                            
-                          } */}
-                          {product.quantity}
-                        </p>
-                      </td>
-                      <td>
-                        <p>
-                          {Math.round(
-                            Number(product.product.price) * product.quantity
-                            /* AllCartItem.find((item) => item.id === product.id)
-                                .quantity */
-                          )}{" "}
-                          ₾
-                        </p>
+                      <td data-title="ცალის ფასი">{product.product.price} ₾</td>
+                      <td data-title="რაოდენობა">{product.quantity}</td>
+                      <td data-title="შეჯამება">
+                        {Math.round(
+                          Number(product.product.price) * product.quantity
+                        )}{" "}
+                        ₾
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+          <div className="payment-container">
+            <div className="payment-methods">
+              <p className="total-qty">
+                <span>ნივთები:</span>
+                <span>
+                  {AllCartItem.length > 0 ? CartTotalPrice + " ₾" : "0"}
+                </span>
+              </p>
+              <p className="delivery">
+                <span>მიწოდება:</span>
+                <span>6 ₾</span>
+              </p>
+              <p className="sum">
+                <span>ჯამი:</span>
+                <span>{CartTotalPrice + 6} ₾</span>
+              </p>
             </div>
           </div>
         </div>

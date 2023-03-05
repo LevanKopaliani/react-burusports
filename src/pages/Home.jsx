@@ -33,8 +33,24 @@ export const useCartStore = create((set, get) => ({
       set((state) => ({ CartItems: [...state.CartItems, item] }));
     }
   },
-
-  // removeAllBears: () => set({ bears: 0 }),
+  removeCartItem: (e) => {
+    get().CartItems.splice(get().CartItems.indexOf(e.product), 1);
+    set((state) => ({ CartItems: [...state.CartItems] }));
+  },
+  CartItemsQty: () => {
+    let qty = 0;
+    get().CartItems.map((item) => {
+      qty += item.quantity;
+    });
+    return Number(qty);
+  },
+  CartTotalPrice: () => {
+    let price = 0;
+    get().CartItems.map((item) => {
+      price += Number(item.product.price);
+    });
+    return price * get().CartItemsQty();
+  },
 }));
 
 //

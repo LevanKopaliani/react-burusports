@@ -27,6 +27,7 @@ const ProductDetails = ({ state }) => {
 
   // cart State
   const AddCartItem = useCartStore((state) => state.setCartItem);
+
   // console.log(useCartStore().CartItems);
   //
   return (
@@ -99,8 +100,9 @@ const ProductDetails = ({ state }) => {
                   </button>
                   <input
                     type="number"
+                    pattern="[0-9]*"
                     className="quantity"
-                    min="1"
+                    // min="1"
                     value={quantity}
                     onChange={handleQuantityChange}
                   />
