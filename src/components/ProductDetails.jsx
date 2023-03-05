@@ -110,7 +110,7 @@ const ProductDetails = ({ state }) => {
                 </p>
                 <button
                   className="add-to-cart"
-                  onClick={() => AddCartItem({ id: id, quantity: quantity })}
+                  onClick={() => AddCartItem({ product, quantity: quantity })} // id : id
                 >
                   კალათაში დამატება
                 </button>

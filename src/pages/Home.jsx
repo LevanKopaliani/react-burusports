@@ -11,12 +11,28 @@ import Banner from "../components/Banner";
 import BannerImg from "../assets/img/banner.png";
 import Brands from "../components/Brands";
 /* ({ CartItems: [...state.CartItems, item] })   */
+// set((state) => ({ CartItems: [...state.CartItems, item] })),
 // Cart State
 import { create } from "zustand";
-export const useCartStore = create((set) => ({
+export const useCartStore = create((set, get) => ({
   CartItems: [],
-  setCartItem: (item) =>
-    set((state) => ({ CartItems: [...state.CartItems, item] })),
+  setCartItem: (item) => {
+    if (
+      get().CartItems.length !== 0 &&
+      get().CartItems.find((product) => product.product.id === item.product.id)
+    ) {
+      let ProductForModify = get().CartItems.find(
+        (prdct) => prdct.product.id === item.product.id
+      );
+      let newQuantity = ProductForModify.quantity + item.quantity;
+
+      get().CartItems.find(
+        (prdct) => prdct.product.id === item.product.id
+      ).quantity = newQuantity;
+    } else {
+      set((state) => ({ CartItems: [...state.CartItems, item] }));
+    }
+  },
 
   // removeAllBears: () => set({ bears: 0 }),
 }));

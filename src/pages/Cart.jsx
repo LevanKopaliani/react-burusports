@@ -5,10 +5,10 @@ import ProductsCard from "../components/ProductsCard";
 
 const Cart = () => {
   const AllCartItem = useCartStore((state) => state.CartItems);
-
-  const CartItemList = AllCartItem.map((item) =>
-    ProductData.find((product) => product.id === item.id)
-  );
+  console.log(AllCartItem);
+  // const CartItemList = AllCartItem.map((item) =>
+  //   ProductData.find((product) => product.id === item.id)
+  // );
 
   return (
     <div className="cart">
@@ -31,29 +31,31 @@ const Cart = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {CartItemList.map((product, index) => (
+                  {AllCartItem.map((product, index) => (
                     <tr className="product-item" key={index}>
                       <td>
-                        <img src={product.img} alt="" />
-                        <p>{product.title}</p>
+                        <img src={product.product.img} alt="" />
+                        <p>{product.product.title}</p>
                       </td>
                       <td>
-                        <p>{product.price} ₾</p>
+                        <p>{product.product.price} ₾</p>
                       </td>
                       <td>
                         <p>
-                          {
+                          {/* {
                             AllCartItem.find((item) => item.id === product.id)
                               .quantity
-                          }
+                            
+                          } */}
+                          {product.quantity}
                         </p>
                       </td>
                       <td>
                         <p>
                           {Math.round(
-                            Number(product.price) *
-                              AllCartItem.find((item) => item.id === product.id)
-                                .quantity
+                            Number(product.product.price) * product.quantity
+                            /* AllCartItem.find((item) => item.id === product.id)
+                                .quantity */
                           )}{" "}
                           ₾
                         </p>
