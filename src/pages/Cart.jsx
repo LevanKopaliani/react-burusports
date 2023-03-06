@@ -2,6 +2,7 @@ import "../styles/Cart.scss";
 import { useCartStore } from "../pages/Home";
 import ProductData from "../data/homepageproducts/HomePageProductData";
 import ProductsCard from "../components/ProductsCard";
+import RecommendedProducts from "../components/RecommendedProducts";
 
 const Cart = () => {
   const AllCartItem = useCartStore((state) => state.CartItems);
@@ -56,11 +57,13 @@ const Cart = () => {
             </div>
           </div>
           <div className="payment-container">
-            <div className="payment-methods">
+            <div className="payment-info">
               <p className="total-qty">
                 <span>ნივთები:</span>
                 <span>
-                  {AllCartItem.length > 0 ? CartTotalPrice + " ₾" : "0"}
+                  {AllCartItem.length > 0
+                    ? Math.round(CartTotalPrice) + " ₾"
+                    : "0"}
                 </span>
               </p>
               <p className="delivery">
@@ -69,10 +72,23 @@ const Cart = () => {
               </p>
               <p className="sum">
                 <span>ჯამი:</span>
-                <span>{CartTotalPrice + 6} ₾</span>
+                <span>{Math.round(CartTotalPrice + 6)} ₾</span>
               </p>
             </div>
+            <div className="payment-methods">
+              <div className="card-pay">
+                <p>გადახდა</p>
+                <button className="bog">საქართველოს ბანკი</button>
+                <button className="tbc">თიბისი ბანკი</button>
+              </div>
+              <div className="pay-later">
+                <p>განვადება</p>
+                <button className="bog">საქართველოს ბანკი</button>
+                <button className="tbc">განვადება</button>
+              </div>
+            </div>
           </div>
+          <RecommendedProducts />
         </div>
       </div>
     </div>

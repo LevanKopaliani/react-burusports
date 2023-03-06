@@ -11,6 +11,7 @@ import { useState } from "react";
 import SimilarProducts from "./SimilarProducts";
 import Breadcrumbs from "./Breadcrumbs";
 import { useCartStore } from "../pages/Home";
+import { useEffect } from "react";
 
 const ProductDetails = ({ state }) => {
   const location = useLocation();
@@ -24,6 +25,10 @@ const ProductDetails = ({ state }) => {
   };
   // Main Image
   const [mainImage, setMainImage] = useState(product.img);
+
+  useEffect(() => {
+    setMainImage(product.img);
+  }, [id]);
 
   // cart State
   const AddCartItem = useCartStore((state) => state.setCartItem);

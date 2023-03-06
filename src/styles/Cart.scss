@@ -1,4 +1,5 @@
 .cart {
+  min-height: 904px;
   padding-top: 32px;
   color: #0e0f0f;
   background-color: #f6f6f6;
@@ -135,13 +136,65 @@
   }
   .payment-container {
     display: flex;
-    justify-content: flex-end;
-    .payment-methods {
+    align-items: flex-end;
+    flex-direction: column;
+    .payment-info {
       width: 100%;
       max-width: 426px;
       p {
+        height: 33px;
+        padding: 8px 0;
         display: flex;
         justify-content: space-between;
+      }
+      .sum {
+        height: 36px;
+        span {
+          font-weight: 700;
+          font-size: 30px;
+          line-height: 36px;
+          letter-spacing: 0.01em;
+          &:first-child {
+            font-size: 22px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+    .payment-methods {
+      max-width: 426px;
+      width: 100%;
+      button {
+        width: 100%;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "FiraGO";
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.01em;
+        font-feature-settings: "case" on;
+        color: #fff;
+        border: none;
+      }
+      .card-pay,
+      .pay-later {
+        margin-top: 16px;
+        p {
+          height: 33px;
+          padding: 8px 0;
+          text-align: center;
+        }
+      }
+
+      .bog {
+        background-color: #ec6a2f;
+      }
+      .tbc {
+        margin-top: 8px;
+        background-color: #49a1dc;
       }
     }
   }

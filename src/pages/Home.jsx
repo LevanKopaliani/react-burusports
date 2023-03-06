@@ -39,16 +39,12 @@ export const useCartStore = create((set, get) => ({
   },
   CartItemsQty: () => {
     let qty = 0;
-    get().CartItems.map((item) => {
-      qty += item.quantity;
-    });
+    get().CartItems.map((item) => (qty += item.quantity));
     return Number(qty);
   },
   CartTotalPrice: () => {
     let price = 0;
-    get().CartItems.map((item) => {
-      price += Number(item.product.price);
-    });
+    get().CartItems.map((item) => (price += Number(item.product.price)));
     return price * get().CartItemsQty();
   },
 }));
