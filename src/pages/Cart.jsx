@@ -1,12 +1,13 @@
 import "../styles/Cart.scss";
 import { useCartStore } from "../pages/Home";
-import ProductData from "../data/homepageproducts/HomePageProductData";
-import ProductsCard from "../components/ProductsCard";
+// import ProductData from "../data/homepageproducts/HomePageProductData";
+// import ProductsCard from "../components/ProductsCard";
 import RecommendedProducts from "../components/RecommendedProducts";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const AllCartItem = useCartStore((state) => state.CartItems);
-  const CartTotalQty = useCartStore((state) => state.CartItemsQty());
+  // const CartTotalQty = useCartStore((state) => state.CartItemsQty());
   const CartTotalPrice = useCartStore((state) => state.CartTotalPrice());
   const removeCartItem = useCartStore((state) => state.removeCartItem);
 
@@ -18,7 +19,9 @@ const Cart = () => {
             <div className="cart-container-heading">
               <h1 className="title">კალათა</h1>
               <p>შოპინგის გაგრძელება</p>
-              <button className="cnt-shopping">ყიდვის გაგრძელება</button>
+              <Link to="/Order">
+                <button className="cnt-shopping">ყიდვის გაგრძელება</button>
+              </Link>
             </div>
             <div className="products-container">
               <table>

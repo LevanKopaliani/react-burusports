@@ -15,6 +15,7 @@ import ChangeEmail from "./components/ChangeEmail";
 import ChangePassword from "./components/ChangePassword";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./pages/Cart";
+import Order from "./pages/Order";
 
 const Applayout = () => {
   return (
@@ -47,6 +48,10 @@ const router = createBrowserRouter(
         {
           path: "/Cart",
           element: <Cart />,
+        },
+        {
+          path: "/Order",
+          element: <Order />,
         },
         {
           path: "/Registration",

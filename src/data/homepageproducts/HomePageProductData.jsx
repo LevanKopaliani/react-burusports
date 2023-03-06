@@ -7,7 +7,6 @@ import ProductImg6 from "./6.png";
 import ProductImg7 from "./7.png";
 import ProductImg8 from "./8.png";
 
-import Thumb1 from "../homepageproducts/thumb1.png";
 import Thumb2 from "../homepageproducts/thumb2.png";
 import Thumb3 from "../homepageproducts/thumb3.png";
 import Thumb4 from "../homepageproducts/thumb4.png";

@@ -9,7 +9,7 @@ import Minus from "../assets/img/Minus.svg";
 import Plus from "../assets/img/Plus.svg";
 import { useState } from "react";
 import SimilarProducts from "./SimilarProducts";
-import Breadcrumbs from "./Breadcrumbs";
+// import Breadcrumbs from "./Breadcrumbs";
 import { useCartStore } from "../pages/Home";
 import { useEffect } from "react";
 
@@ -28,7 +28,11 @@ const ProductDetails = ({ state }) => {
 
   useEffect(() => {
     setMainImage(product.img);
-  }, [id]);
+  }, [product]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll To top after product changes
+  }, [location]);
 
   // cart State
   const AddCartItem = useCartStore((state) => state.setCartItem);
