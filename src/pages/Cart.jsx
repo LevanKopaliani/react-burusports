@@ -69,7 +69,7 @@ const Cart = () => {
                     : "0"}
                 </span>
               </p>
-              <p className="delivery">
+              <p className="delivery-price">
                 <span>მიწოდება:</span>
                 <span>6 ₾</span>
               </p>

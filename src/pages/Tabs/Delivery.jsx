@@ -138,7 +138,7 @@ const Delivery = ({ className }) => {
                     pattern="[0-9]*"
                     className="quantity"
                     // min="1"
-                    value="1"
+                    defaultValue="1"
                   />
                   <button>
                     <img src={Plus} alt="Plus" />
