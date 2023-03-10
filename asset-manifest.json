@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-burusports/static/css/main.5f946063.css",
-    "main.js": "/react-burusports/static/js/main.8fa12337.js",
+    "main.css": "/react-burusports/static/css/main.6be9a08e.css",
+    "main.js": "/react-burusports/static/js/main.9a3fb0ea.js",
     "static/media/banner.png": "/react-burusports/static/media/banner.7d582476b44c22c466ec.png",
     "static/media/FiraGO-Medium.woff": "/react-burusports/static/media/FiraGO-Medium.c8bb9b49c2276456161a.woff",
     "static/media/FiraGO-Bold.woff": "/react-burusports/static/media/FiraGO-Bold.f1925bf170a99f9a3e3b.woff",
@@ -27,6 +27,7 @@
     "static/media/2.png": "/react-burusports/static/media/2.bc6d7a19ca4b4ba8ae74.png",
     "static/media/cart.svg": "/react-burusports/static/media/cart.b24ed443a5cb5be4738221d20ee8d452.svg",
     "static/media/user.svg": "/react-burusports/static/media/user.9573acf349eb1ad008dbf6e471640699.svg",
+    "static/media/confirm.svg": "/react-burusports/static/media/confirm.62b1803c5bcb28fc85eb06a84bc12341.svg",
     "static/media/location.svg": "/react-burusports/static/media/location.92081db415576fd781f96b5c8f5d41e4.svg",
     "static/media/share-tw.svg": "/react-burusports/static/media/share-tw.73c8ff6f446074bf702fc8c566facb94.svg",
     "static/media/phone.svg": "/react-burusports/static/media/phone.0654b71d543cc65e07d24918dae36e84.svg",
@@ -35,15 +36,17 @@
     "index.html": "/react-burusports/index.html",
     "static/media/fb.svg": "/react-burusports/static/media/fb.c186d08f1df9f2811898b38f43ce9150.svg",
     "static/media/share-fb.svg": "/react-burusports/static/media/share-fb.bbb2b3888a22be0bf4ecbcca77975fa4.svg",
+    "static/media/XCircle.svg": "/react-burusports/static/media/XCircle.14440303ebda489b51ef55131fba59c6.svg",
     "static/media/google.svg": "/react-burusports/static/media/google.785593949894db5d73613d5fd8bbac4a.svg",
     "static/media/Plus.svg": "/react-burusports/static/media/Plus.d29a4b96fafe3a0e8929f9fed4890897.svg",
     "static/media/Minus.svg": "/react-burusports/static/media/Minus.d7f31dc3711302bc497bd73ad40f73aa.svg",
     "static/media/check.svg": "/react-burusports/static/media/check.d8c1f48bebbfa801d4d4.svg",
-    "main.5f946063.css.map": "/react-burusports/static/css/main.5f946063.css.map",
-    "main.8fa12337.js.map": "/react-burusports/static/js/main.8fa12337.js.map"
+    "static/media/tabdivider.svg": "/react-burusports/static/media/tabdivider.9c70446ea098fc32bdde4a9b15f0ca9d.svg",
+    "main.6be9a08e.css.map": "/react-burusports/static/css/main.6be9a08e.css.map",
+    "main.9a3fb0ea.js.map": "/react-burusports/static/js/main.9a3fb0ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f946063.css",
-    "static/js/main.8fa12337.js"
+    "static/css/main.6be9a08e.css",
+    "static/js/main.9a3fb0ea.js"
   ]
 }
