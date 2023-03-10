@@ -9,7 +9,7 @@ const CartIcon = () => {
     <div className="cart-icon">
       <Link to="/Cart">
         <img src={CartImg} alt="cart" />
-        {CartItemQuantity != 0 && <span>{CartItemQuantity}</span>}
+        {CartItemQuantity !== 0 && <span>{CartItemQuantity}</span>}
       </Link>
     </div>
   );

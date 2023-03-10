@@ -3,7 +3,15 @@ import Minus from "../../assets/img/Minus.svg";
 import Plus from "../../assets/img/Plus.svg";
 import Xcircle from "../../assets/img/XCircle.svg";
 
+import { useCartStore } from "../../pages/Home";
+import RecommendedProducts from "../../components/RecommendedProducts";
+
 const Delivery = ({ className }) => {
+  const AllCartItem = useCartStore((state) => state.CartItems);
+  const CartTotalQty = useCartStore((state) => state.CartItemsQty());
+  const CartTotalPrice = useCartStore((state) => state.CartTotalPrice());
+  const removeCartItem = useCartStore((state) => state.removeCartItem);
+
   return (
     <div className={"delivery " + className}>
       <h1 className="delivery-title">მიწოდების ინფორმაცია</h1>
@@ -115,9 +123,50 @@ const Delivery = ({ className }) => {
           </div>
         </div>
         <div className="delivery-cart-info">
-          <h3 className="cart-items-qty">კალათა (1)</h3>
+          <h3 className="cart-items-qty">კალათა ({CartTotalQty})</h3>
           <div className="products-in-cart">
-            <h3>
+            {AllCartItem.map((product, index) => (
+              <div className="product-item" key={index}>
+                <div data-title="ნივთი" className="product-title">
+                  <h3>
+                    {product.product.title}
+                    {/* <p onClick={() => removeCartItem({ product })}>remove</p> */}
+                  </h3>
+                  <div data-title="ცალის ფასი" className="item-price">
+                    {product.product.price * product.quantity} ₾
+                    <span>
+                      <img
+                        src={Xcircle}
+                        alt=""
+                        onClick={() => removeCartItem({ product })}
+                      />
+                    </span>
+                  </div>
+                </div>
+
+                <div className="quantity">
+                  <h4>რაოდენობა:</h4>
+                  <span>
+                    <p className="quantity-input">
+                      <button>
+                        <img src={Minus} alt="minus" />
+                      </button>
+                      <input
+                        type="number"
+                        pattern="[0-9]*"
+                        className="quantity"
+                        defaultValue={product.quantity}
+                      />
+                      <button>
+                        <img src={Plus} alt="Plus" />
+                      </button>
+                    </p>
+                  </span>
+                </div>
+              </div>
+            ))}
+
+            {/* <h3>
               Mirage K175 Samoa Hammer Knife Black
               <p>
                 49.99₾
@@ -145,11 +194,11 @@ const Delivery = ({ className }) => {
                   </button>
                 </p>
               </span>
-            </div>
+            </div> */}
             <div className="item-prices">
               <p className="item-prices-total">
                 <span>ნივთები:</span>
-                <span>49.99₾</span>
+                <span>{Math.round(CartTotalPrice)}</span>
               </p>
               <p className="delivery-price">
                 <span>მიწოდება:</span>
@@ -158,7 +207,7 @@ const Delivery = ({ className }) => {
             </div>
             <div className="total-price">
               <p>ჯამი:</p>
-              <p>55.99₾</p>
+              <p>{Math.round(CartTotalPrice + 6)} ₾</p>
             </div>
           </div>
         </div>

@@ -16,6 +16,9 @@ import Brands from "../components/Brands";
 import { create } from "zustand";
 export const useCartStore = create((set, get) => ({
   CartItems: [],
+  // CartItemsQty: () => {
+  //   return get().CartItems.length;
+  // },
   setCartItem: (item) => {
     if (
       get().CartItems.length !== 0 &&
@@ -44,8 +47,11 @@ export const useCartStore = create((set, get) => ({
   },
   CartTotalPrice: () => {
     let price = 0;
-    get().CartItems.map((item) => (price += Number(item.product.price)));
-    return price * get().CartItemsQty();
+
+    get().CartItems.map(
+      (item) => (price += Number(item.product.price * item.quantity))
+    );
+    return price; // * get().CartItemsQty()
   },
 }));
 

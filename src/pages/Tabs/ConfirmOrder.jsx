@@ -1,20 +1,54 @@
 import "./ConfirmOrder.scss";
+import ConfirmImg from "../../assets/img/confirm.svg";
 
 import { useCartStore } from "../../pages/Home";
+import { useState } from "react";
 
 const ConfirmOrder = ({ className }) => {
   const AllCartItem = useCartStore((state) => state.CartItems);
-  // const CartTotalQty = useCartStore((state) => state.CartItemsQty());
-  const CartTotalPrice = useCartStore((state) => state.CartTotalPrice());
   const removeCartItem = useCartStore((state) => state.removeCartItem);
+  const [ConfirmationBlockVisible, setConfirmationBlockVisible] =
+    useState(false);
+
+  const handleHeightChange = () => {
+    setConfirmationBlockVisible(!ConfirmationBlockVisible);
+  };
+
   return (
     <div className={"confirm " + className}>
       <h1 className="confirm-title">თქვენი შეკვეთა წარმატებით შეიქმნა</h1>
+
       <div className="confirm-container">
+        <div
+          className={
+            ConfirmationBlockVisible
+              ? "order-confirmation-block visible"
+              : "hidden"
+          }
+        >
+          <div className="confirm-img">
+            <img src={ConfirmImg} alt="confirm" />
+          </div>
+          <div className="confirm-text">
+            <h3>თქვენი შეკვეთა დადასტურდა</h3>
+            <p>
+              ინფორმაცია თქვენს შეკვეთასა და მიწოდების დეტალებთან დაკავშირებით
+              შეგიძლიათ მიიღოთ ჩემი შეკვეთების გვერდზე, თქვენი შეკვეთა მშავდება.
+              მადლობას გიხდით შენაძენისთვის
+            </p>
+          </div>
+        </div>
         <div className="confirm-order-form">
           <table>
             <thead>
-              <tr className="table-heading">
+              <tr
+                className="table-heading"
+                style={
+                  ConfirmationBlockVisible === true
+                    ? { borderTop: "1px solid #e5e5e5" }
+                    : null
+                }
+              >
                 <th>ნივთი</th>
                 <th>ცალის ფასი</th>
                 <th>რაოდენობა</th>
@@ -45,7 +79,12 @@ const ConfirmOrder = ({ className }) => {
           </table>
           <div className="confirm-section">
             <p>შოპინგის გაგრძელება</p>
-            <button className="order-confirm-button">ჩემი შეკვეთები</button>
+            <button
+              className="order-confirm-button"
+              onClick={handleHeightChange}
+            >
+              ჩემი შეკვეთები
+            </button>
           </div>
         </div>
       </div>
