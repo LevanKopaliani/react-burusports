@@ -77,6 +77,15 @@
             color: black !important;
           }
         }
+        .show-more,
+        .show-less {
+          margin-top: 8px;
+          color: #f37321;
+          font-size: 12px;
+          line-height: 14px;
+          height: 24px;
+          letter-spacing: 0.01em;
+        }
       }
     }
   }

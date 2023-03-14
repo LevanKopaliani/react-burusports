@@ -1,6 +1,7 @@
 import "../styles/Products.scss";
 import SearchFilterImg from "../assets/img/searchfilter.svg";
 import FilterAcordion from "../components/FilterAcordion";
+import CaretLeft from "../assets/img/CaretLeft.svg";
 
 const Products = () => {
   return (
@@ -18,7 +19,21 @@ const Products = () => {
                 />
                 <img src={SearchFilterImg} alt="search" />
               </div>
-              <div className="category-menu">menu</div>
+              <div className="category-menu">
+                <div className="current-category">
+                  <img src={CaretLeft} alt="" />
+                  <span>სნოუბორდები</span>
+                </div>
+                <ul className="category-list">
+                  <li>ბორდები</li>
+                  <li>ბორდის ფეხსაცმელი</li>
+                  <li>საჭერი</li>
+                  <li>სტიკერი</li>
+                  <li>კალათბურთის ზმანი</li>
+                  <li>ჯორდანიჩები</li>
+                  <li>აბა ჰე, არ გაჩერდე</li>
+                </ul>
+              </div>
               <div className="filters">
                 <div className="filters-heading">
                   <span>ფილტრები</span>
@@ -36,6 +51,8 @@ const Products = () => {
                       "კალათბურთის ზმანი",
                       "ჯორდანიჩები",
                       "აბა ჰე, არ გაჩერდე",
+                      "test1",
+                      "test2",
                     ],
                   }}
                 />
@@ -85,7 +102,26 @@ const Products = () => {
                 />
               </div>
             </aside>
-            <section className="products-section">content</section>
+            <section className="products-section">
+              <div className="products-section-filters">
+                <select name="sort" id="sort">
+                  <option value="palceholder" selected>
+                    სორტირება: ფასი მატებით
+                  </option>
+                  <option value="test1">test1</option>
+                  <option value="test2">test2</option>
+                  <option value="test3">test3</option>
+                  <option value="test4">test4</option>
+                </select>
+                <div className="sale-filter">
+                  <p>ფასდაკლებული</p>
+                  <label className="switch" htmlFor="switch">
+                    <input type="checkbox" className="" id="switch" />
+                    <span className="switch-slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>
