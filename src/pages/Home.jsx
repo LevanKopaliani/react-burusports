@@ -87,7 +87,7 @@ const Home = () => {
               ნახე ჩვენი ახალი პროდუქცია
             </h1>
             <div className="homepage-products">
-              {HomePageProductData.map((product, index) => (
+              {HomePageProductData.slice(0, 8).map((product, index) => (
                 <ProductsCard
                   id={product.id}
                   img={product.img}

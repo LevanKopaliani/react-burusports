@@ -1,13 +1,14 @@
 import "rc-menu/assets/index.css";
 import "../styles/MainMenu.scss";
 import ArrowRight from "../assets/img/arrowright.png";
+import { Link } from "react-router-dom";
 
 const MainMenu = () => {
   return (
     <nav className="mainmenu">
       <ul className="menu">
         <li className="menu-item">
-          სპორტი და ინსტრუმენტები
+          <Link to="/Products">სპორტი და ინსტრუმენტები</Link>
           <div className="menu-item-content">
             <ul className="menu-category-list">
               <li className="menu-category-item">

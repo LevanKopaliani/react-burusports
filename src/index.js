@@ -16,6 +16,7 @@ import ChangePassword from "./components/ChangePassword";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./pages/Cart";
 import Order from "./pages/Order";
+import Products from "./pages/Products";
 
 const Applayout = () => {
   return (
@@ -60,6 +61,10 @@ const router = createBrowserRouter(
         {
           path: "/Product-details",
           element: <ProductDetails />,
+        },
+        {
+          path: "/Products",
+          element: <Products />,
         },
         {
           path: "/Account",
