@@ -2,6 +2,8 @@ import "../styles/Products.scss";
 import SearchFilterImg from "../assets/img/searchfilter.svg";
 import FilterAcordion from "../components/FilterAcordion";
 import CaretLeft from "../assets/img/CaretLeft.svg";
+import HomePageProductData from "../data/homepageproducts/HomePageProductData";
+import ProductsCard from "../components/ProductsCard";
 
 const Products = () => {
   return (
@@ -120,6 +122,17 @@ const Products = () => {
                     <span className="switch-slider round"></span>
                   </label>
                 </div>
+              </div>
+              <div className="products-section-data">
+                {HomePageProductData.map((product, index) => (
+                  <ProductsCard
+                    id={product.id}
+                    img={product.img}
+                    title={product.title}
+                    price={product.price}
+                    key={product.id}
+                  />
+                ))}
               </div>
             </section>
           </div>
